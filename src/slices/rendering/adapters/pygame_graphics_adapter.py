@@ -3,15 +3,10 @@ from typing import List, Tuple
 import pygame
 
 from src.slices.game_core.core.entities.cell import CellState
-from src.slices.game_core.core.entities.board import Board  # Usar importación absoluta
-from src.slices.rendering.core.rendering_config import (
-    RenderingConfig,  # Usar importación absoluta
-)
-from src.slices.rendering.ports.secondary_ports.graphics_library_port import (
-    IGraphicsLibraryPort,
-)
+from src.slices.game_core.core.entities.board import Board
+from src.slices.rendering.core.rendering_config import RenderingConfig
+from src.slices.rendering.ports.secondary_ports.graphics_library_port import IGraphicsLibraryPort
 
-# Definimos un tipo para el estado del tablero para mayor claridad
 BoardState = List[List[CellState]]
 
 
@@ -19,36 +14,54 @@ class PygameGraphicsAdapter(IGraphicsLibraryPort):
     """
     Adaptador que implementa el puerto secundario IGraphicsLibraryPort
     utilizando la biblioteca Pygame.
+
+    Attributes:
+        config (RenderingConfig): Configuración de la visualización.
+        status_height (int): Altura de la barra de estado.
+        screen (pygame.Surface): Superficie de la ventana.
+        font (pygame.font.Font): Fuente para el texto.
+        show_help (bool): Controla si se muestra la ventana de ayuda.
     """
 
     def __init__(self, config: RenderingConfig):
         """
         Inicializa el adaptador de Pygame.
+
+        Args:
+            config: Configuración de la visualización.
         """
         pygame.init()
         pygame.font.init()
         self.config = config
-        self.status_height = 30  # Altura de la barra de estado
+        self.status_height = 30
         window_width = config.grid_width * config.cell_size
         window_height = config.grid_height * config.cell_size + self.status_height
         self.screen = pygame.display.set_mode((window_width, window_height))
         pygame.display.set_caption("Game of Life")
         self._clock = pygame.time.Clock()
-        self.font = pygame.font.Font(None, 24)  # Fuente para el texto
-        self.show_help = False  # Controla si se muestra la ventana de ayuda
+        self.font = pygame.font.Font(None, 24)
+        self.show_help = False
 
-    def initialize(self, width: int, height: int):
+    def initialize(self, width: int, height: int) -> None:
         """
         Inicializa Pygame y crea la ventana de visualización.
 
         Args:
             width: Ancho de la ventana.
             height: Alto de la ventana.
+
+        Returns:
+            None
         """
         pass
 
-    def clear_screen(self):
-        """Limpia la pantalla"""
+    def clear_screen(self) -> None:
+        """
+        Limpia la pantalla.
+
+        Returns:
+            None
+        """
         self.screen.fill(self.config.background_color)
 
     def get_screen(self):

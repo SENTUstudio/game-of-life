@@ -10,57 +10,30 @@ from src.slices.game_core.core.entities.board import Board
 from src.slices.game_core.core.entities.cell import CellState
 
 from src.slices.game_core.adapters.game_core_adapter import GameCoreAdapter
-from src.slices.game_core.core.use_cases.apply_next_generation_use_case import (
-    ApplyNextGenerationUseCase,
-)
-from src.slices.game_core.core.use_cases.calculate_next_generation_use_case import (
-    CalculateNextGenerationUseCase,
-)
-
-# Importar entidades, casos de uso, puertos y adaptadores de los slices
-# Game Core
+from src.slices.game_core.core.use_cases.apply_next_generation_use_case import ApplyNextGenerationUseCase
+from src.slices.game_core.core.use_cases.calculate_next_generation_use_case import CalculateNextGenerationUseCase
 from src.slices.game_core.core.use_cases.clear_board_use_case import ClearBoardUseCase
 from src.slices.game_core.core.use_cases.get_board_state_use_case import GetBoardStateUseCase
 from src.slices.game_core.core.use_cases.get_cell_state_use_case import GetCellStateUseCase
-from src.slices.game_core.core.use_cases.initialize_board_use_case import (
-    InitializeBoardUseCase,
-)
+from src.slices.game_core.core.use_cases.initialize_board_use_case import InitializeBoardUseCase
 from src.slices.game_core.core.use_cases.set_cell_state_use_case import SetCellStateUseCase
-from src.slices.game_core.ports.primary_ports.board_initialization_port import (
-    IBoardInitializationPort,
-)
-from src.slices.game_core.ports.primary_ports.board_modification_port import (
-    IBoardModificationPort,
-)
+from src.slices.game_core.ports.primary_ports.board_initialization_port import IBoardInitializationPort
+from src.slices.game_core.ports.primary_ports.board_modification_port import IBoardModificationPort
 from src.slices.game_core.ports.primary_ports.board_query_port import IBoardQueryPort
-from src.slices.game_core.ports.primary_ports.game_simulation_port import (
-    IGameSimulationPort,
-)
+from src.slices.game_core.ports.primary_ports.game_simulation_port import IGameSimulationPort
+
 from src.slices.rendering.adapters.pygame_graphics_adapter import PygameGraphicsAdapter
 from src.slices.rendering.adapters.rendering_adapter import RenderingAdapter
-from src.slices.rendering.adapters.rendering_query_adapter import (
-    RenderingQueryAdapter,  # Nuevo adaptador
-)
-from src.slices.rendering.adapters.rendering_query_adapter import (
-    RenderingQueryAdapter as UserInteractionRenderingQueryAdapter,  # Renombrar
-)
+from src.slices.rendering.adapters.rendering_query_adapter import RenderingQueryAdapter
+from src.slices.rendering.adapters.rendering_query_adapter import RenderingQueryAdapter as UserInteractionRenderingQueryAdapter
 
-# Rendering
 from src.slices.rendering.core.rendering_config import RenderingConfig
 from src.slices.rendering.core.use_cases.render_board_use_case import RenderBoardUseCase
-from src.slices.rendering.core.use_cases.update_rendering_config_use_case import (
-    UpdateRenderingConfigUseCase,
-)
+from src.slices.rendering.core.use_cases.update_rendering_config_use_case import UpdateRenderingConfigUseCase
 from src.slices.rendering.ports.primary_ports.rendering_port import IRenderingPort
-from src.slices.rendering.ports.primary_ports.rendering_query_port import (
-    IRenderingQueryPort,  # Nueva interfaz
-)
-from src.slices.rendering.ports.primary_ports.rendering_query_port import (
-    IRenderingQueryPort as IUserInteractionRenderingQueryPort,  # Renombrar
-)
-from src.slices.rendering.ports.secondary_ports.graphics_library_port import (
-    IGraphicsLibraryPort,
-)
+from src.slices.rendering.ports.primary_ports.rendering_query_port import IRenderingQueryPort
+from src.slices.rendering.ports.primary_ports.rendering_query_port import IRenderingQueryPort as IUserInteractionRenderingQueryPort
+from src.slices.rendering.ports.secondary_ports.graphics_library_port import IGraphicsLibraryPort
 from src.slices.simulation_control.adapters.game_core_modification_adapter import (
     GameCoreModificationAdapter,
 )
