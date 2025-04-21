@@ -1,0 +1,56 @@
+site_name: Game of Life - Documentación
+theme:
+  name: material
+  language: 'es'
+  palette:
+    primary: 'indigo'
+    accent: 'blue'
+
+nav:
+  - Introducción:
+      - index.md
+  - Arquitectura:
+      - arquitectura/index.md
+  - Guía de Instalación:
+      - guia-instalacion/index.md
+  - Guía de Uso:
+      - guia-uso/index.md
+  - Módulos:
+      - Game Core:
+          - modulos/game-core/index.md
+      - Rendering:
+          - modulos/rendering/index.md
+      - Simulation:
+          - modulos/simulation/index.md
+      - Simulation Control:
+          - modulos/simulation-control/index.md
+      - Statistics:
+          - modulos/statistics/index.md
+      - User Interaction:
+          - modulos/user-interaction/index.md
+  - Contribución:
+      - contribucion/index.md
+  - API Reference:
+      - api-reference/index.md
+
+markdown_extensions:
+  - admonition
+  - codehilite
+  - toc:
+      permalink: true
+
+extra:
+  social:
+    - icon: fontawesome/brands/github
+      link: https://github.com/tu-usuario/game-of-life
+  author:
+    name: Tu Nombre
+    bio: Desarrollador del Game of Life
+    avatar: assets/images/avatar.png
+
+plugins:
+  - search
+  - tags
+
+repo_name: tu-usuario/game-of-life
+repo_url: https://github.com/tu-usuario/game-of-life
