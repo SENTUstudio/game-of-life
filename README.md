@@ -24,7 +24,7 @@ El Game of Life es una implementación del famoso juego de Conway's Game of Life
 
 1. Clonar el repositorio:
    ```bash
-   git clone [URL_DEL_REPOSITORIO]
+   git clone https://github.com/SENTUstudio/game-of-life.git
    cd game-of-life
    ```
 
@@ -111,7 +111,7 @@ El Game of Life es una implementación del famoso juego de Conway's Game of Life
 ## Documentación
 
 La documentación completa está disponible en:
-- [Documentación en línea](https://tu-usuario.github.io/game-of-life)
+- [Documentación en línea](https://sentustudio.github.io/game-of-life)
 - [Documentación local](docs)
 
 ## Licencia
@@ -120,5 +120,4 @@ Este proyecto está bajo la licencia MIT. Consulta el archivo [LICENSE](LICENSE)
 
 ## Autores
 
-- Tu Nombre
-- Otros contribuidores
+- SENTUstudio

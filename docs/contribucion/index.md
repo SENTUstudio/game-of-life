@@ -30,7 +30,7 @@
 ### 1. Clonar Repositorio
 
 ```bash
-git clone [URL_DEL_REPOSITORIO]
+git clone https://github.com/SENTUstudio/game-of-life.git
 cd game-of-life
 ```
 
